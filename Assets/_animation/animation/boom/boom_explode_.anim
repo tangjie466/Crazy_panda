@@ -1,0 +1,297 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!74 &7400000
+AnimationClip:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: boom_explode_
+  serializedVersion: 6
+  m_Legacy: 0
+  m_Compressed: 0
+  m_UseHighQualityCurve: 1
+  m_RotationCurves: []
+  m_CompressedRotationCurves: []
+  m_PositionCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: 0, y: 15.4581652, z: 0}
+        outSlope: {x: 0, y: 15.4581652, z: 0}
+        tangentMode: 0
+      - time: .0833333358
+        value: {x: 0, y: 1.28818047, z: 0}
+        inSlope: {x: 0, y: 8.30544376, z: 0}
+        outSlope: {x: 0, y: 8.30544376, z: 0}
+        tangentMode: 0
+      - time: .166666672
+        value: {x: 0, y: 1.38424063, z: 0}
+        inSlope: {x: 0, y: -5.36887836, z: 0}
+        outSlope: {x: 0, y: -5.36887836, z: 0}
+        tangentMode: 0
+      - time: .25
+        value: {x: 0, y: .393367529, z: 0}
+        inSlope: {x: 0, y: -20.3054428, z: 0}
+        outSlope: {x: 0, y: -20.3054428, z: 0}
+        tangentMode: 0
+      - time: .333333343
+        value: {x: 0, y: -2, z: 0}
+        inSlope: {x: 0, y: -27.668541, z: 0}
+        outSlope: {x: 0, y: -27.668541, z: 0}
+        tangentMode: 0
+      - time: .416666657
+        value: {x: 0, y: -4.21805573, z: 0}
+        inSlope: {x: 0, y: -23.0950718, z: 0}
+        outSlope: {x: 0, y: -23.0950718, z: 0}
+        tangentMode: 0
+      - time: .5
+        value: {x: 0, y: -5.84917831, z: 0}
+        inSlope: {x: 0, y: -21.1226578, z: 0}
+        outSlope: {x: 0, y: -21.1226578, z: 0}
+        tangentMode: 0
+      - time: .583333313
+        value: {x: 0, y: -7.73849821, z: 0}
+        inSlope: {x: 0, y: -22.6718445, z: 0}
+        outSlope: {x: 0, y: -22.6718445, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    path: 
+  m_ScaleCurves: []
+  m_FloatCurves: []
+  m_PPtrCurves:
+  - curve:
+    - time: 0
+      value: {fileID: 21300000, guid: 344f68f07f76d43b994289ff98ad2573, type: 3}
+    - time: .0833333358
+      value: {fileID: 21300000, guid: 3db86ea622b4c4387871ae9b7c7c6bf8, type: 3}
+    - time: .166666672
+      value: {fileID: 21300000, guid: 4503d6edb6b7f4b65ba45f084fe8b240, type: 3}
+    - time: .25
+      value: {fileID: 21300000, guid: 2fec4e31abd2d4450afea41ce064e4f9, type: 3}
+    - time: .333333343
+      value: {fileID: 21300000, guid: dded96a14ee374c22b286d4212fafba7, type: 3}
+    - time: .416666657
+      value: {fileID: 21300000, guid: dc1818a6c1a2747f3a1859e4cead9760, type: 3}
+    - time: .5
+      value: {fileID: 21300000, guid: 78c499c0e401e40f7a1db22cf2232ee8, type: 3}
+    - time: .583333313
+      value: {fileID: 21300000, guid: 84d6b23cb3235420cbb3079182df69d6, type: 3}
+    attribute: m_Sprite
+    path: 
+    classID: 212
+    script: {fileID: 0}
+  m_SampleRate: 12
+  m_WrapMode: 0
+  m_Bounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  m_ClipBindingConstant:
+    genericBindings:
+    - path: 0
+      attribute: 1
+      script: {fileID: 0}
+      classID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - path: 0
+      attribute: 0
+      script: {fileID: 0}
+      classID: 212
+      customType: 23
+      isPPtrCurve: 1
+    pptrCurveMapping:
+    - {fileID: 21300000, guid: 344f68f07f76d43b994289ff98ad2573, type: 3}
+    - {fileID: 21300000, guid: 3db86ea622b4c4387871ae9b7c7c6bf8, type: 3}
+    - {fileID: 21300000, guid: 4503d6edb6b7f4b65ba45f084fe8b240, type: 3}
+    - {fileID: 21300000, guid: 2fec4e31abd2d4450afea41ce064e4f9, type: 3}
+    - {fileID: 21300000, guid: dded96a14ee374c22b286d4212fafba7, type: 3}
+    - {fileID: 21300000, guid: dc1818a6c1a2747f3a1859e4cead9760, type: 3}
+    - {fileID: 21300000, guid: 78c499c0e401e40f7a1db22cf2232ee8, type: 3}
+    - {fileID: 21300000, guid: 84d6b23cb3235420cbb3079182df69d6, type: 3}
+  m_AnimationClipSettings:
+    serializedVersion: 2
+    m_StartTime: 0
+    m_StopTime: .666666627
+    m_OrientationOffsetY: 0
+    m_Level: 0
+    m_CycleOffset: 0
+    m_LoopTime: 1
+    m_LoopBlend: 0
+    m_LoopBlendOrientation: 0
+    m_LoopBlendPositionY: 0
+    m_LoopBlendPositionXZ: 0
+    m_KeepOriginalOrientation: 0
+    m_KeepOriginalPositionY: 1
+    m_KeepOriginalPositionXZ: 0
+    m_HeightFromFeet: 0
+    m_Mirror: 0
+  m_EditorCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: .0833333358
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: .166666672
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: .25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: .333333343
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: .416666657
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: .5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: .583333313
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_LocalPosition.x
+    path: 
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 15.4581652
+        outSlope: 15.4581652
+        tangentMode: 10
+      - time: .0833333358
+        value: 1.28818047
+        inSlope: 8.30544376
+        outSlope: 8.30544376
+        tangentMode: 10
+      - time: .166666672
+        value: 1.38424063
+        inSlope: -5.36887836
+        outSlope: -5.36887836
+        tangentMode: 10
+      - time: .25
+        value: .393367529
+        inSlope: -20.3054428
+        outSlope: -20.3054428
+        tangentMode: 10
+      - time: .333333343
+        value: -2
+        inSlope: -27.668541
+        outSlope: -27.668541
+        tangentMode: 10
+      - time: .416666657
+        value: -4.21805573
+        inSlope: -23.0950718
+        outSlope: -23.0950718
+        tangentMode: 10
+      - time: .5
+        value: -5.84917831
+        inSlope: -21.1226578
+        outSlope: -21.1226578
+        tangentMode: 10
+      - time: .583333313
+        value: -7.73849821
+        inSlope: -22.6718445
+        outSlope: -22.6718445
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_LocalPosition.y
+    path: 
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: .0833333358
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: .166666672
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: .25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: .333333343
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: .416666657
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: .5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: .583333313
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_LocalPosition.z
+    path: 
+    classID: 4
+    script: {fileID: 0}
+  m_EulerEditorCurves: []
+  m_HasGenericRootTransform: 1
+  m_HasMotionFloatCurves: 0
+  m_GenerateMotionCurves: 0
+  m_Events:
+  - time: 0
+    functionName: destroy_collider
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: .583333313
+    functionName: destroy_self
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
