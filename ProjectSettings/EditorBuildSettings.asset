@@ -1,0 +1,257 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/index.unity
+  - enabled: 0
+    path: Assets/scnece_1.unity
+  - enabled: 0
+    path: Assets/panda.unity
+  - enabled: 0
+    path: Assets/panda.unity
+  - enabled: 0
+    path: Assets/index.unity
+  - enabled: 0
+    path: Assets/index.unity
+  - enabled: 0
+    path: Assets/index.unity
+  - enabled: 0
+    path: Assets/scence/gate_7.unity
+  - enabled: 0
+    path: Assets/scence/gate_2.unity
+  - enabled: 0
+    path: Assets/scence/gate_3.unity
+  - enabled: 0
+    path: Assets/scence/gate_4.unity
+  - enabled: 0
+    path: Assets/scence/gate_5.unity
+  - enabled: 0
+    path: Assets/scence/gate_6.unity
+  - enabled: 0
+    path: Assets/scence/gate_2.unity
+  - enabled: 0
+    path: Assets/scence/gate_50.unity
+  - enabled: 0
+    path: Assets/scence/loading_scence.unity
+  - enabled: 0
+    path: Assets/scence/select_gate.unity
+  - enabled: 0
+    path: Assets/scence/gate_1.unity
+  - enabled: 0
+    path: Assets/scence/gate_2.unity
+  - enabled: 0
+    path: Assets/scence/gate_3.unity
+  - enabled: 0
+    path: Assets/scence/gate_4.unity
+  - enabled: 0
+    path: Assets/scence/gate_5.unity
+  - enabled: 0
+    path: Assets/scence/gate_6.unity
+  - enabled: 0
+    path: Assets/scence/gate_7.unity
+  - enabled: 0
+    path: Assets/scence/gate_8.unity
+  - enabled: 0
+    path: Assets/scence/gate_9.unity
+  - enabled: 0
+    path: Assets/scence/gate_10.unity
+  - enabled: 0
+    path: Assets/scence/gate_11.unity
+  - enabled: 0
+    path: Assets/scence/gate_12.unity
+  - enabled: 0
+    path: Assets/scence/gate_13.unity
+  - enabled: 0
+    path: Assets/scence/gate_14.unity
+  - enabled: 0
+    path: Assets/scence/gate_15.unity
+  - enabled: 0
+    path: Assets/scence/gate_16.unity
+  - enabled: 0
+    path: Assets/scence/gate_17.unity
+  - enabled: 0
+    path: Assets/scence/gate_18.unity
+  - enabled: 0
+    path: Assets/scence/gate_19.unity
+  - enabled: 0
+    path: Assets/scence/gate_20.unity
+  - enabled: 0
+    path: Assets/scence/gate_21.unity
+  - enabled: 0
+    path: Assets/scence/gate_21.unity
+  - enabled: 0
+    path: Assets/scence/gate_22.unity
+  - enabled: 0
+    path: Assets/scence/gate_23.unity
+  - enabled: 0
+    path: Assets/scence/gate_24.unity
+  - enabled: 0
+    path: Assets/scence/gate_25.unity
+  - enabled: 0
+    path: Assets/scence/gate_26.unity
+  - enabled: 0
+    path: Assets/scence/gate_27.unity
+  - enabled: 0
+    path: Assets/scence/gate_28.unity
+  - enabled: 0
+    path: Assets/scence/gate_29.unity
+  - enabled: 0
+    path: Assets/scence/gate_30.unity
+  - enabled: 0
+    path: Assets/scence/gate_31.unity
+  - enabled: 0
+    path: Assets/scence/gate_32.unity
+  - enabled: 0
+    path: Assets/scence/gate_33.unity
+  - enabled: 0
+    path: Assets/scence/gate_34.unity
+  - enabled: 0
+    path: Assets/scence/gate_35.unity
+  - enabled: 0
+    path: Assets/scence/gate_36.unity
+  - enabled: 0
+    path: Assets/scence/gate_37.unity
+  - enabled: 0
+    path: Assets/scence/gate_38.unity
+  - enabled: 0
+    path: Assets/scence/gate_39.unity
+  - enabled: 0
+    path: Assets/scence/gate_40.unity
+  - enabled: 0
+    path: Assets/scence/gate_41.unity
+  - enabled: 0
+    path: Assets/scence/gate_42.unity
+  - enabled: 0
+    path: Assets/scence/gate_43.unity
+  - enabled: 0
+    path: Assets/scence/gate_44.unity
+  - enabled: 0
+    path: Assets/scence/gate_45.unity
+  - enabled: 0
+    path: Assets/scence/gate_46.unity
+  - enabled: 0
+    path: Assets/scence/gate_47.unity
+  - enabled: 0
+    path: Assets/scence/gate_48.unity
+  - enabled: 0
+    path: Assets/scence/gate_50.unity
+  - enabled: 0
+    path: Assets/scence/gate_49.unity
+  - enabled: 0
+    path: Assets/scence/gate_23.unity
+  - enabled: 0
+    path: Assets/scence/gate_27.unity
+  - enabled: 0
+    path: Assets/scence/gate_18.unity
+  - enabled: 0
+    path: Assets/scence/gate_18.unity
+  - enabled: 1
+    path: Assets/scence/gate_1.unity
+  - enabled: 1
+    path: Assets/scence/gate_10.unity
+  - enabled: 1
+    path: Assets/scence/gate_11.unity
+  - enabled: 1
+    path: Assets/scence/gate_12.unity
+  - enabled: 1
+    path: Assets/scence/gate_13.unity
+  - enabled: 1
+    path: Assets/scence/gate_14.unity
+  - enabled: 1
+    path: Assets/scence/gate_15.unity
+  - enabled: 1
+    path: Assets/scence/gate_16.unity
+  - enabled: 1
+    path: Assets/scence/gate_17.unity
+  - enabled: 1
+    path: Assets/scence/gate_18.unity
+  - enabled: 1
+    path: Assets/scence/gate_19.unity
+  - enabled: 1
+    path: Assets/scence/gate_2.unity
+  - enabled: 1
+    path: Assets/scence/gate_20.unity
+  - enabled: 1
+    path: Assets/scence/gate_21.unity
+  - enabled: 1
+    path: Assets/scence/gate_22.unity
+  - enabled: 1
+    path: Assets/scence/gate_23.unity
+  - enabled: 1
+    path: Assets/scence/gate_24.unity
+  - enabled: 1
+    path: Assets/scence/gate_25.unity
+  - enabled: 1
+    path: Assets/scence/gate_26.unity
+  - enabled: 1
+    path: Assets/scence/gate_27.unity
+  - enabled: 1
+    path: Assets/scence/gate_28.unity
+  - enabled: 1
+    path: Assets/scence/gate_29.unity
+  - enabled: 1
+    path: Assets/scence/gate_3.unity
+  - enabled: 1
+    path: Assets/scence/gate_30.unity
+  - enabled: 1
+    path: Assets/scence/gate_31.unity
+  - enabled: 1
+    path: Assets/scence/gate_32.unity
+  - enabled: 1
+    path: Assets/scence/gate_33.unity
+  - enabled: 1
+    path: Assets/scence/gate_34.unity
+  - enabled: 1
+    path: Assets/scence/gate_35.unity
+  - enabled: 1
+    path: Assets/scence/gate_36.unity
+  - enabled: 1
+    path: Assets/scence/gate_37.unity
+  - enabled: 1
+    path: Assets/scence/gate_38.unity
+  - enabled: 1
+    path: Assets/scence/gate_39.unity
+  - enabled: 1
+    path: Assets/scence/gate_4.unity
+  - enabled: 1
+    path: Assets/scence/gate_40.unity
+  - enabled: 1
+    path: Assets/scence/gate_41.unity
+  - enabled: 1
+    path: Assets/scence/gate_42.unity
+  - enabled: 1
+    path: Assets/scence/gate_43.unity
+  - enabled: 1
+    path: Assets/scence/gate_44.unity
+  - enabled: 1
+    path: Assets/scence/gate_45.unity
+  - enabled: 1
+    path: Assets/scence/gate_46.unity
+  - enabled: 1
+    path: Assets/scence/gate_47.unity
+  - enabled: 1
+    path: Assets/scence/gate_48.unity
+  - enabled: 1
+    path: Assets/scence/gate_49.unity
+  - enabled: 1
+    path: Assets/scence/gate_5.unity
+  - enabled: 1
+    path: Assets/scence/gate_50.unity
+  - enabled: 1
+    path: Assets/scence/gate_6.unity
+  - enabled: 1
+    path: Assets/scence/gate_7.unity
+  - enabled: 1
+    path: Assets/scence/gate_8.unity
+  - enabled: 1
+    path: Assets/scence/gate_9.unity
+  - enabled: 1
+    path: Assets/scence/loading_scence.unity
+  - enabled: 1
+    path: Assets/scence/select_gate.unity
+  - enabled: 0
+    path: Assets/panda.unity

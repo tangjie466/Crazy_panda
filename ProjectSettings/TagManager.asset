@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Hat
+  - Bomb
+  - Bullet
+  - Enemy
+  - Scenery
+  - normal_block
+  - metal_block
+  - snow_block
+  - barrel_block
+  - panda
+  - right_spring
+  - left_spring
+  - up_spring
+  - down_spring
+  - ice_block
+  - boom_block
+  - fire_block
+  - up_block
+  - down_block
+  - left_block
+  - right_block
+  - move_block
+  - street
+  - trap
+  - normal_enemy
+  - move_enemy
+  - attact_enemy
+  - bee_enemy
+  - normal_move_enemy
+  - normal_enymy
+  - fast_move_enemy
+  - barell_collider
+  - trap_collider
+  - smile_block
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - panda
+  - block
+  - move_block
+  - dead_block
+  - enemy
+  - street
+  - barell
+  - bullet
+  - trap
+  - button
+  - background
+  - land
+  - map
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 1959699241
+    locked: 0
+  - name: Midground
+    uniqueID: 2737215443
+    locked: 0
+  - name: Sparks
+    uniqueID: 1369744519
+    locked: 0
+  - name: Bullet
+    uniqueID: 3567414253
+    locked: 0
+  - name: Player
+    uniqueID: 926194697
+    locked: 0
+  - name: street
+    uniqueID: 2660826029
+    locked: 0
+  - name: block
+    uniqueID: 282755657
+    locked: 0
+  - name: enemy
+    uniqueID: 2581483199
+    locked: 0
+  - name: panda
+    uniqueID: 3524351285
+    locked: 0
+  - name: button
+    uniqueID: 1864241049
+    locked: 0
+  - name: land
+    uniqueID: 3066608717
+    locked: 0
+  - name: Foreground
+    uniqueID: 404910065
+    locked: 0
+  - name: cross
+    uniqueID: 2808100343
+    locked: 0
