@@ -27,7 +27,7 @@ public class ads_controller : MonoBehaviour {
 	
 	}
    
-	void result_suc(ShowResult result){
+	void result_suc(UnityEngine.Advertisements.ShowResult result){
 
 		switch(result){
 		case ShowResult.Finished :

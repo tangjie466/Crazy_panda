@@ -9,7 +9,12 @@ public class audio_manager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
 		audio = this.gameObject.GetComponent<AudioSource> ();
+
+		if(music == null){
+			return;
+		}
 		if (audio_controller.music_isplaying == 0) {
 			music.gameObject.SetActive(true);
 			non_music.gameObject.SetActive(false);
