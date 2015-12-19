@@ -2,11 +2,19 @@
 using System.Collections;
 
 public class scence_manger : MonoBehaviour {
-
+	[HideInInspector]
     public GameObject setlayer;
+	[HideInInspector]
     public GameObject o;
     public const string loading_scence = "loading_scence";
     AudioSource button_audio;
+
+
+	float ads_yz_1 = 1.0f; //RESTART
+
+	float ads_yz_2 = 1.0f;//SELECT GATE
+	float ads_yz_3 = 1.0f;//NEXT GATE
+
     // Use this for initialization
     void Start()
     {
@@ -18,6 +26,7 @@ public class scence_manger : MonoBehaviour {
         button_audio.playOnAwake = false;
         button_audio.loop = false;
 
+		setlayer = Resources.Load<GameObject>("setting_canvas");
         if (setlayer != null) { 
             Canvas c = setlayer.GetComponent<Canvas>();
             c.renderMode = RenderMode.ScreenSpaceCamera;
@@ -44,6 +53,18 @@ public class scence_manger : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
+		if ( Application.platform == RuntimePlatform.Android &&(Input.GetKeyDown(KeyCode.Escape)))
+		{
+			if(Application.loadedLevelName.Equals("index")){
+
+				Application.Quit();
+			}else{
+
+				gate_common.next_gate = "index";
+				Application.LoadLevel("loading_scence");
+			}
+		}
+
 	}
     //开始游戏 
     public void beginGame() {
@@ -65,6 +86,7 @@ public class scence_manger : MonoBehaviour {
     public void restart_scence() {
       play_sound();
         Debug.Log("restart game");
+		ads_controller.share_ads().show_nor_ads(ads_yz_1);
         Instantiate(o, new Vector3(0, 0, 0), o.gameObject.transform.rotation);
 
     }
@@ -90,9 +112,10 @@ public class scence_manger : MonoBehaviour {
     }
     //打开选关场景
     public void select_gate_scence() {
-        Time.timeScale = 1;
+		ads_controller.share_ads().show_nor_ads(ads_yz_2);
+		Time.timeScale = 1;
         gate_common.next_gate = "select_gate";
-      play_sound();
+      	play_sound();
         Application.LoadLevel(loading_scence);
     }
 
@@ -104,12 +127,21 @@ public class scence_manger : MonoBehaviour {
     public void set_music(bool is_open) {
     }
 
-    //观看广告
-    public void open_ads() {
+    //观看广告 
+//    public void open_ads(int type = 1) {
+//
+//    }
 
-    }
+	//
 
-    
+	public void next_gate(){
+		ads_controller.share_ads().show_nor_ads(ads_yz_3);
+		if(map_data_manager.cur_num != map_data_manager.max_num)
+			map_data_manager.cur_num++;
+		gate_common.next_gate = "gate_"+map_data_manager.cur_num;
+		Application.LoadLevel("loading_scence");
+	}
+
     //继续游戏
     public void continue_game() {
       

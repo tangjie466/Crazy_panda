@@ -39,7 +39,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 026658ec0a05ba549bf5d8ac0b41e52a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  setlayer: {fileID: 195460, guid: a106e53fb6aca434ea5948778e9b5005, type: 2}
+  setlayer: {fileID: 145274, guid: 0238d8ed1820b47ee80196e41cdbc7e5, type: 2}
   o: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
@@ -51,7 +51,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: setlayer
       value: 
-      objectReference: {fileID: 195460, guid: a106e53fb6aca434ea5948778e9b5005, type: 2}
+      objectReference: {fileID: 145274, guid: 0238d8ed1820b47ee80196e41cdbc7e5, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 122254}

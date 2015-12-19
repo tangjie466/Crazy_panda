@@ -169,7 +169,7 @@ public class panda_controller : MonoBehaviour {
 
                 if ((isSticksTriger >> 3) == 1)
                 {
-                    Debug.Log("isSticksTriger up");
+                    
                     initActionState();
                     player.SetInteger(READY_DIRECTION, 7);
                     stand_direction = 1;
@@ -1504,7 +1504,7 @@ public class panda_controller : MonoBehaviour {
         GameObject ob = EventSystem.current.currentSelectedGameObject;
         if (ob != null)
         {
-            Debug.Log("touch name is"+ ob.name);
+           
             touch_level l = EventSystem.current.currentSelectedGameObject.GetComponent<touch_level>();
             if (l != null) {
                 touch_level cur_l = this.gameObject.GetComponent<touch_level>();
@@ -1842,7 +1842,7 @@ public class panda_controller : MonoBehaviour {
 
 	public void dead_move(){
 
-		Debug.Log("dead move pre_dead_move_direction= "+pre_dead_move_direction);
+
 
 		if(pre_dead_move_direction == 1){
 
