@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using System.Collections.Generic;
+using Umeng;
 using UnityEngine.Advertisements;
 public class ads_controller : MonoBehaviour {
 
@@ -83,30 +84,43 @@ public class ads_controller : MonoBehaviour {
 			return;
 		}
 
+		GA.Event(tongji.ADS,tongji.NOR_ADS);
 #if UNITY_IOS
+
 		show_nor_unity_ads();
 #elif UNITY_ANDROID
 		if(Advertisement.IsReady()){
+
+
 			show_nor_unity_ads();
 		}else{
+
 			show_nor_youmi_ads();
 		}
+
+//		show_nor_youmi_ads();
 #endif
 
 	}
 
 	public void show_nor_unity_ads(){
+		Dictionary<string,string> dic = new Dictionary<string,string>();
+		dic[tongji.NOR_ADS] = tongji.UNITY_ADS;
+		GA.Event(tongji.ADS,dic);
 		Advertisement.Show();
 
 	}
 
 
 	public void show_nor_youmi_ads(){
-
+		Dictionary<string,string> dic = new Dictionary<string,string>();
+		dic[tongji.NOR_ADS] = tongji.YOUMI_ADS;
+		GA.Event(tongji.ADS,dic);
 		mJo.Call("showVideo","-1");
 	}
 
 	public  void  show_reward_ads(){
+		GA.Event(tongji.ADS,tongji.NEXT_GATE_ADS);
 #if UNITY_IOS
 		show_reward_unity_ads();
 #elif UNITY_ANDROID
@@ -115,6 +129,8 @@ public class ads_controller : MonoBehaviour {
 		}else{
 			show_reward_youmi_ads();
 		}
+
+//		show_reward_youmi_ads();
 #endif
 
 
@@ -143,11 +159,41 @@ public class ads_controller : MonoBehaviour {
 		
 	}
 
+
+
 	void reward_result(string  s_result){
 		int result = int.Parse(s_result);
 		switch(result){
 		case 1:
-			Debug.Log("ads ok");
+
+			Dictionary<string,string > dic = new Dictionary<string,string>();
+			dic[tongji.ADS_SUC] = tongji.YOUMI_ADS;
+			GA.Event(tongji.ADS,dic);
+
+			break;
+		case 0:
+			Dictionary<string,string> f_dic = new Dictionary<string,string>();
+			f_dic[tongji.ADS_FAILED] = tongji.YOUMI_ADS;
+			GA.Event(tongji.ADS,f_dic);
+			Debug.Log("ads failed");
+			break;
+		case -1:
+			Debug.Log("ads skipped");
+			break;
+		}
+		reward(s_result);
+
+	}
+
+	void reward(string s_result){
+		int result = int.Parse(s_result);
+		switch(result){
+		case 1:
+
+
+			GA.Event(tongji.GATE_ADS,Application.loadedLevelName);
+			
+			
 			map_data_manager.add_max_num();
 			if(map_data_manager.cur_num != map_data_manager.max_num)
 				map_data_manager.cur_num++;
@@ -163,21 +209,27 @@ public class ads_controller : MonoBehaviour {
 		}
 
 	}
-	
+
 	void result_suc(ShowResult result){
 		int r = 0;
 		switch(result){
 		case ShowResult.Finished :
 			r = 1;
+			Dictionary<string,string> dic = new Dictionary<string,string>();
+			dic[tongji.ADS_SUC] = tongji.UNITY_ADS;
+			GA.Event(tongji.ADS,dic);
 			break;
 		case ShowResult.Failed:
+			Dictionary<string,string> f_dic = new Dictionary<string,string>();
+			f_dic[tongji.ADS_FAILED] = tongji.UNITY_ADS;
+			GA.Event(tongji.ADS,f_dic);
 			r = 0;
 			break;
 		case ShowResult.Skipped:
 			r = -1;
 			break;
 		}
-		reward_result(""+r);
+		reward(""+r);
 	}
 	
 	

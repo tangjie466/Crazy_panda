@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using Umeng;
 public class scence_manger : MonoBehaviour {
 	[HideInInspector]
     public GameObject setlayer;
@@ -9,6 +9,7 @@ public class scence_manger : MonoBehaviour {
     public const string loading_scence = "loading_scence";
     AudioSource button_audio;
 
+	GameObject game_setLayer;
 
 	float ads_yz_1 = 1.0f; //RESTART
 
@@ -26,8 +27,20 @@ public class scence_manger : MonoBehaviour {
         button_audio.playOnAwake = false;
         button_audio.loop = false;
 
+
+		game_setLayer  = Resources.Load<GameObject>("sound_canvas");
+		if(game_setLayer != null){
+			Canvas c = game_setLayer.GetComponent<Canvas>();
+			c.renderMode = RenderMode.ScreenSpaceCamera;
+			c.worldCamera = Camera.current;
+			
+		}
+		
 		setlayer = Resources.Load<GameObject>("setting_canvas");
+
+
         if (setlayer != null) { 
+
             Canvas c = setlayer.GetComponent<Canvas>();
             c.renderMode = RenderMode.ScreenSpaceCamera;
             c.worldCamera = Camera.current;
@@ -56,7 +69,7 @@ public class scence_manger : MonoBehaviour {
 		if ( Application.platform == RuntimePlatform.Android &&(Input.GetKeyDown(KeyCode.Escape)))
 		{
 			if(Application.loadedLevelName.Equals("index")){
-
+				GA.EventEnd(tongji.GAME_BEGIN);
 				Application.Quit();
 			}else{
 
@@ -84,6 +97,8 @@ public class scence_manger : MonoBehaviour {
     }
     //重新开始
     public void restart_scence() {
+		GA.FailLevel(Application.loadedLevelName);
+		GA.EventEndWithPrimarykey(tongji.GATE_TIME,Application.loadedLevelName);
       play_sound();
         Debug.Log("restart game");
 		ads_controller.share_ads().show_nor_ads(ads_yz_1);
@@ -102,7 +117,7 @@ public class scence_manger : MonoBehaviour {
     public void game_setting() {
 		play_sound ();
 	
-		Instantiate(setlayer, setlayer.gameObject.transform.position, setlayer.gameObject.transform.rotation);
+		Instantiate(game_setLayer, game_setLayer.gameObject.transform.position, game_setLayer.gameObject.transform.rotation);
     }
 
     //开始某一关
@@ -112,6 +127,8 @@ public class scence_manger : MonoBehaviour {
     }
     //打开选关场景
     public void select_gate_scence() {
+		GA.FailLevel(Application.loadedLevelName);
+		GA.EventEndWithPrimarykey(tongji.GATE_TIME,Application.loadedLevelName);
 		ads_controller.share_ads().show_nor_ads(ads_yz_2);
 		Time.timeScale = 1;
         gate_common.next_gate = "select_gate";

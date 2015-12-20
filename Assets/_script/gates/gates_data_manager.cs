@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using System.Collections.Generic;
+using Umeng;
 public class gates_data_manager : MonoBehaviour {
 
 
@@ -14,6 +15,14 @@ public class gates_data_manager : MonoBehaviour {
     AudioSource audio;
 
     void Start () {
+
+		GA.StartLevel(Application.loadedLevelName);
+		Dictionary<string,string> dic = new Dictionary<string,string >();
+		dic["gate_name"] = Application.loadedLevelName;
+
+		GA.EventBeginWithPrimarykeyAndAttributes(tongji.GATE_TIME,Application.loadedLevelName,dic);
+
+
         audio = this.gameObject.AddComponent<AudioSource>();
         audio.playOnAwake = true;
         audio.loop = true;
@@ -61,7 +70,7 @@ public class gates_data_manager : MonoBehaviour {
 
     public void  check_win() {
 
-        Debug.Log("gate_data_manager check_win's enemy_num is "+enemy_num);
+//        Debug.Log("gate_data_manager check_win's enemy_num is "+enemy_num);
         if (is_win || is_lose) {
             return;
         }
@@ -73,6 +82,9 @@ public class gates_data_manager : MonoBehaviour {
     }
 
     public void win() {
+		GA.FinishLevel(Application.loadedLevelName);
+
+		GA.EventEndWithPrimarykey(tongji.GATE_TIME,Application.loadedLevelName);
         audio.Stop();
         map_data_manager.add_max_num();
         Instantiate(win_obj, new Vector3(0, 0, 0), win_obj.transform.rotation);
@@ -83,6 +95,8 @@ public class gates_data_manager : MonoBehaviour {
         if (is_lose) {
             return;
         }
+		GA.FailLevel(Application.loadedLevelName);
+		GA.EventEndWithPrimarykey(tongji.GATE_TIME,Application.loadedLevelName);
         audio.Stop();
         Instantiate(lose_obj, new Vector3(0, 0, 0), lose_obj.transform.rotation);
         Debug.Log("lose");
