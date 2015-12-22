@@ -63,14 +63,23 @@ public class scence_manger : MonoBehaviour {
 		}
 
 	}
+
+	public void quiteApp(){
+		GA.EventEnd(tongji.GAME_BEGIN);
+		Application.Quit();
+
+	}
+
 	// Update is called once per frame
 	void Update () {
 	
 		if ( Application.platform == RuntimePlatform.Android &&(Input.GetKeyDown(KeyCode.Escape)))
 		{
 			if(Application.loadedLevelName.Equals("index")){
-				GA.EventEnd(tongji.GAME_BEGIN);
-				Application.Quit();
+
+
+				ads_controller.share_ads().quite_app("quiteApp");
+
 			}else{
 
 				gate_common.next_gate = "index";

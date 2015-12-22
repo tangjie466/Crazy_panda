@@ -9,10 +9,11 @@ public class advertisement_bt : MonoBehaviour {
 	void Start () {
 	
 		cur_state = ads_controller.share_ads().get_reward_ads_state();
+		Debug.Log("cur_video_state is "+cur_state);
 		if(cur_state == 0){
-			this.gameObject.GetComponent<Button>().interactable = false;
+			this.gameObject.SetActive(false);
 		}else{
-			this.gameObject.GetComponent<Button>().interactable = true;
+			this.gameObject.SetActive(true);
 		}
 	}
 	
@@ -22,7 +23,7 @@ public class advertisement_bt : MonoBehaviour {
 		if(cur_state == 0){
 			cur_state = ads_controller.share_ads().get_reward_ads_state();
 			if(cur_state == 1){
-				this.gameObject.GetComponent<Button>().interactable = true;
+				this.gameObject.SetActive( true);
 			}
 		}
 

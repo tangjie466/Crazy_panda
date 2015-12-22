@@ -5,23 +5,31 @@ using Umeng;
 using UnityEngine.Advertisements;
 public class ads_controller : MonoBehaviour {
 
-
+	int unity_ads_state = 0;
 
 	AndroidJavaClass mJc;
 	AndroidJavaObject mJo;
 	static ads_controller cont = null;
+
+	[HideInInspector]
+	public int youmi_video_state = 0;
 	public static ads_controller share_ads(){
 		if(cont == null){
 			cont = new ads_controller();
+
 		}
 		return cont;
 	}
+
 
 
 	public  ads_controller(){
 #if UNITY_ANDROID
 		mJc=new AndroidJavaClass("com.unity3d.player.UnityPlayer");
 		mJo=mJc.GetStatic<AndroidJavaObject>("currentActivity");
+		this.youmi_video_state = mJo.Call<int>("getVideostate");
+
+
 #endif
 	}
 
@@ -50,8 +58,11 @@ public class ads_controller : MonoBehaviour {
 #if UNITY_IOS
 		state = get_unity_ads(1);
 #elif UNITY_ANDROID
-		get_unity_ads(1);
-		state = 1;
+		unity_ads_state = get_unity_ads(1);
+		int state_2 = this.youmi_video_state;
+		state = unity_ads_state+state_2;
+		Debug.Log("UNITY ADS state is "+unity_ads_state);
+
 #endif
 		return state;
 
@@ -116,6 +127,12 @@ public class ads_controller : MonoBehaviour {
 		Dictionary<string,string> dic = new Dictionary<string,string>();
 		dic[tongji.NOR_ADS] = tongji.YOUMI_ADS;
 		GA.Event(tongji.ADS,dic);
+		if(this.youmi_video_state ==0){
+
+			mJo.Call("showSpot","-1");
+			return;
+		}
+
 		mJo.Call("showVideo","-1");
 	}
 
@@ -124,7 +141,7 @@ public class ads_controller : MonoBehaviour {
 #if UNITY_IOS
 		show_reward_unity_ads();
 #elif UNITY_ANDROID
-		if(Advertisement.IsReady("rewardeVideo")){
+		if(unity_ads_state == 1){
 			show_reward_unity_ads();
 		}else{
 			show_reward_youmi_ads();
@@ -232,5 +249,10 @@ public class ads_controller : MonoBehaviour {
 		reward(""+r);
 	}
 	
-	
+
+	public void quite_app(string s){
+
+		mJo.Call("quiteApp",s);
+	}
+
 }

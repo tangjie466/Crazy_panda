@@ -12876,6 +12876,10 @@ Prefab:
       propertyPath: m_Name
       value: street_3 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 21217766, guid: 2b7f0d60ac99e4d38bf32a5685c5287b, type: 2}
+      propertyPath: m_SortingLayerID
+      value: 282755657
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b7f0d60ac99e4d38bf32a5685c5287b, type: 2}
   m_IsPrefabParent: 0
@@ -13879,6 +13883,14 @@ Prefab:
     - target: {fileID: 112748, guid: 2b7f0d60ac99e4d38bf32a5685c5287b, type: 2}
       propertyPath: m_Name
       value: street_3 (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 21217766, guid: 2b7f0d60ac99e4d38bf32a5685c5287b, type: 2}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 21217766, guid: 2b7f0d60ac99e4d38bf32a5685c5287b, type: 2}
+      propertyPath: m_SortingLayerID
+      value: 282755657
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b7f0d60ac99e4d38bf32a5685c5287b, type: 2}
