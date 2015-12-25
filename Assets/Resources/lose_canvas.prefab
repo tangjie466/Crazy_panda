@@ -612,6 +612,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5da004b7fe544a3ebe94b9b8cc625b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  youmi_video_state: 0
 --- !u!114 &11433846
 MonoBehaviour:
   m_ObjectHideFlags: 1

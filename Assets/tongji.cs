@@ -13,8 +13,11 @@ public class tongji : MonoBehaviour {
 	public static string ADS="advertisement";
 	public static string ADS_SUC="请求广告成功";
 	public static string ADS_FAILED = "请求广告失败";
+
 	public static string UNITY_ADS="UNITY广告";
 	public static string YOUMI_ADS="YOUMI广告";
+	public static string ADMOB_ADS = "google广告";
+
 	public static string NEXT_GATE_ADS="过关请求广告";
 	public static string NOR_ADS="正常广告播放";
 
