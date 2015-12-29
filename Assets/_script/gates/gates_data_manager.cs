@@ -92,7 +92,7 @@ public class gates_data_manager : MonoBehaviour {
 
     public void lose() {
 
-        if (is_lose) {
+		if (is_lose || is_win) {
             return;
         }
 		GA.FailLevel(Application.loadedLevelName);

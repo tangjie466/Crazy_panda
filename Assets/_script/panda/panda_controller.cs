@@ -1925,7 +1925,7 @@ public class panda_controller : MonoBehaviour {
 
 
 	public void dead(){
-
+	
 		Debug.Log ("panda dead");
 		initActionState();
 		dead_state();
