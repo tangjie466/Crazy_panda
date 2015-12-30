@@ -11,6 +11,8 @@ using GoogleMobileAds.Api;
 public class ads_controller : MonoBehaviour {
 
 
+	static int a= 0;
+
 	static int unity_ads_state = 0;
 
 	AndroidJavaClass mJc;
@@ -190,6 +192,7 @@ public class ads_controller : MonoBehaviour {
 		
 	}
 
+
 	public void show_nor_ads(float ads_yz){
 		float t = UnityEngine.Random.value;
 		if(t>ads_yz){
@@ -202,14 +205,20 @@ public class ads_controller : MonoBehaviour {
 
 		show_nor_unity_ads();
 #elif UNITY_ANDROID
-		if(nor_admob.IsLoaded()){
+		a = (a+1) % 3;
+		if(a == 0){
+
+			if(nor_admob.IsLoaded()){
 			
-			show_nor_admob();
-		}else if(Advertisement.IsReady()){
+				show_nor_admob();
+			}
+		}else if(a == 1){ 
+			if(Advertisement.IsReady()){
 			
 			
 			show_nor_unity_ads();
-		}else{
+			}
+		}else if(a == 2){
 
 			show_nor_youmi_ads();
 		}
@@ -218,6 +227,10 @@ public class ads_controller : MonoBehaviour {
 #endif
 
 	}
+
+
+
+
 
 
 	public void show_nor_admob(){

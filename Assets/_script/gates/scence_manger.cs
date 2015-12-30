@@ -11,10 +11,10 @@ public class scence_manger : MonoBehaviour {
 
 	GameObject game_setLayer;
 
-	float ads_yz_1 = 1.0f; //RESTART
+	float ads_yz_1 = 0.8f; //RESTART
 
-	float ads_yz_2 = 1.0f;//SELECT GATE
-	float ads_yz_3 = 1.0f;//NEXT GATE
+	float ads_yz_2 = 0.5f;//SELECT GATE
+	float ads_yz_3 = 0.4f;//NEXT GATE
 
     // Use this for initialization
     void Start()
