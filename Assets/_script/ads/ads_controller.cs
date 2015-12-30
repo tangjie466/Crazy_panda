@@ -8,18 +8,28 @@ using GoogleMobileAds.Api;
 
 
 
-public class ads_controller : MonoBehaviour {
+public class ads_controller  {
 
 
+<<<<<<< HEAD
 	static int a= 0;
 
 	static int unity_ads_state = 0;
+=======
+	public int unity_ads_state = 0;
+	public int youmi_ads_state = 0;
+	public int admob_ads_state = 0;
+
+	public int  cur_ads = 0; //0:unity 1:admob 2:youmi 3:youmi_video
+	public int cur_reward_ads = 0;//0:unity 1:admob 2:youmi 
+
+>>>>>>> origin/tangjie
 
 	AndroidJavaClass mJc;
 	AndroidJavaObject mJo;
 	static ads_controller cont = null;
 
-	static InterstitialAd nor_admob = null,reward_admob=null;
+	InterstitialAd nor_admob = null,reward_admob=null;
 
 	public static string deviceid = "";
 
@@ -86,30 +96,25 @@ public class ads_controller : MonoBehaviour {
 
 
 
-	void Awake(){
 
-
-		
-		
-	}
 
 
 	public void request_nor_admob(object sender, EventArgs args){
-		Debug.Log("request_nor_admob");
+
 //		AdRequest request = new AdRequest.Builder().AddTestDevice(deviceid).Build();
 		AdRequest request = new AdRequest.Builder().Build();
 		// Load the interstitial with the request.
 		nor_admob.LoadAd(request);
-		Debug.Log("request_nor_admob end");
+
 	}
 
 	public void request_reward_admob(object sender, EventArgs args){
-		Debug.Log("request_reward_admob");
+
 
 //		AdRequest request_1 = new AdRequest.Builder().AddTestDevice(deviceid).Build();
 		AdRequest request_1 = new AdRequest.Builder().Build();
 		reward_admob.LoadAd(request_1);
-		Debug.Log("request_reward_admob end");
+
 
 	}
 
@@ -125,7 +130,14 @@ public class ads_controller : MonoBehaviour {
 
 	}
 
+	public void Start(){
 
+	}
+
+	void Update(){
+
+
+	}
 
 
 
@@ -143,12 +155,21 @@ public class ads_controller : MonoBehaviour {
 #elif UNITY_ANDROID
 		unity_ads_state = get_unity_ads(1);
 
-		int state_2 = get_admob_state(1);
+		admob_ads_state = get_admob_state(1);
 
-		state = unity_ads_state+state_2;
-		Debug.Log("UNITY ADS state is "+unity_ads_state);
+		state = unity_ads_state+admob_ads_state+youmi_ads_state;
+		Debug.Log("UNITY ADS state is "+unity_ads_state+",admob state is"+admob_ads_state+",youmi state is"+youmi_ads_state);
 
 #endif
+		return state;
+
+	}
+
+
+	int get_youmi_state(int type){
+		int state = 0;
+
+		state = mJo.Call<int>("getVideostate");
 		return state;
 
 	}
@@ -183,13 +204,13 @@ public class ads_controller : MonoBehaviour {
 				return 1;
 			}
 			return 0;
-		}
-		if(Advertisement.IsReady("rewardedVideo")){
+		}else{
+			if(Advertisement.IsReady("rewardedVideo")){
 			
-			return 1;
+				return 1;
+			}
+			return 0;
 		}
-		return 0;
-		
 	}
 
 
@@ -205,6 +226,7 @@ public class ads_controller : MonoBehaviour {
 
 		show_nor_unity_ads();
 #elif UNITY_ANDROID
+<<<<<<< HEAD
 		a = (a+1) % 3;
 		if(a == 0){
 
@@ -219,9 +241,33 @@ public class ads_controller : MonoBehaviour {
 			show_nor_unity_ads();
 			}
 		}else if(a == 2){
+=======
+>>>>>>> origin/tangjie
 
-			show_nor_youmi_ads();
+		cur_ads = (cur_ads+1)%4;
+		if(cur_ads == 0){
+			if(Advertisement.IsReady()){
+				
+				
+				show_nor_unity_ads();
+			}
+		}else if(cur_ads == 1){
+			if(nor_admob.IsLoaded()){
+				
+				show_nor_admob();
+			}
+		}else if(cur_ads == 2){
+			if(get_youmi_state(0) == 1){
+				show_nor_youmi_ads(0);
+			}
+
+		}else {
+
+			show_nor_youmi_ads(1);
 		}
+
+
+
 
 //		show_nor_admob();
 #endif
@@ -252,12 +298,16 @@ public class ads_controller : MonoBehaviour {
 	}
 
 
-	public void show_nor_youmi_ads(){
+	public void show_nor_youmi_ads(int i){
 		Dictionary<string,string> dic = new Dictionary<string,string>();
 		dic[tongji.NOR_ADS] = tongji.YOUMI_ADS;
 		GA.Event(tongji.ADS,dic);
-		mJo.Call("showSpot","-1");
+		if( i == 1){
+			mJo.Call("showSpot","-1");
+		}else{
 
+			mJo.Call("showVideo","-1");
+		}
 	}
 
 	public  void  show_reward_ads(){
@@ -265,12 +315,16 @@ public class ads_controller : MonoBehaviour {
 #if UNITY_IOS
 		show_reward_unity_ads();
 #elif UNITY_ANDROID
-		if(reward_admob.IsLoaded()){
+		
+
+	if(admob_ads_state == 1){
 			
 			show_reward_admob();
 		}else if(unity_ads_state == 1){
 			
 			show_reward_unity_ads();
+		}else if(youmi_ads_state == 1){
+			show_reward_youmi_ads();
 		}
 //		show_reward_youmi_ads();
 #endif
@@ -283,7 +337,7 @@ public class ads_controller : MonoBehaviour {
 		Dictionary<string,string> dic = new Dictionary<string,string>();
 		dic[tongji.NEXT_GATE_ADS] = tongji.YOUMI_ADS;
 		GA.Event(tongji.ADS,dic);
-		mJo.Call("showVideo","reward_result");
+
 
 	}
 
@@ -291,12 +345,16 @@ public class ads_controller : MonoBehaviour {
 		Dictionary<string,string> dic = new Dictionary<string,string>();
 		dic[tongji.NEXT_GATE_ADS] = tongji.UNITY_ADS;
 		GA.Event(tongji.ADS,dic);
-		UnityEngine.Advertisements.ShowOptions op = new ShowOptions();
-		op.resultCallback = result_suc;
-		Debug.Log("show unityads");
+		if(Advertisement.IsReady("rewardedVideo")){
+			UnityEngine.Advertisements.ShowOptions op = new ShowOptions();
+			op.resultCallback = result_suc;
 
-		Advertisement.Show("rewardedVideo",op);
-		
+
+			Advertisement.Show("rewardedVideo",op);
+		}else {
+			Debug.Log("tangjie noready play ads");
+
+		}
 	}
 
 	public void show_reward_admob(){
@@ -309,19 +367,11 @@ public class ads_controller : MonoBehaviour {
 	}
 
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
 
 
-	void reward_result(string  s_result){
+
+	public void reward_result(string  s_result){
 		int result = int.Parse(s_result);
 		switch(result){
 		case 1:
@@ -345,7 +395,7 @@ public class ads_controller : MonoBehaviour {
 
 	}
 
-	void reward(string s_result){
+	public void reward(string s_result){
 		int result = int.Parse(s_result);
 		switch(result){
 		case 1:
@@ -370,7 +420,7 @@ public class ads_controller : MonoBehaviour {
 
 	}
 
-	void result_suc(ShowResult result){
+	public	void result_suc(ShowResult result){
 		int r = 0;
 		switch(result){
 		case ShowResult.Finished :
