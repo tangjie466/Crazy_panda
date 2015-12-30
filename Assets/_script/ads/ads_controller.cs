@@ -11,11 +11,7 @@ using GoogleMobileAds.Api;
 public class ads_controller  {
 
 
-<<<<<<< HEAD
-	static int a= 0;
 
-	static int unity_ads_state = 0;
-=======
 	public int unity_ads_state = 0;
 	public int youmi_ads_state = 0;
 	public int admob_ads_state = 0;
@@ -23,7 +19,7 @@ public class ads_controller  {
 	public int  cur_ads = 0; //0:unity 1:admob 2:youmi 3:youmi_video
 	public int cur_reward_ads = 0;//0:unity 1:admob 2:youmi 
 
->>>>>>> origin/tangjie
+
 
 	AndroidJavaClass mJc;
 	AndroidJavaObject mJo;
@@ -226,23 +222,7 @@ public class ads_controller  {
 
 		show_nor_unity_ads();
 #elif UNITY_ANDROID
-<<<<<<< HEAD
-		a = (a+1) % 3;
-		if(a == 0){
 
-			if(nor_admob.IsLoaded()){
-			
-				show_nor_admob();
-			}
-		}else if(a == 1){ 
-			if(Advertisement.IsReady()){
-			
-			
-			show_nor_unity_ads();
-			}
-		}else if(a == 2){
-=======
->>>>>>> origin/tangjie
 
 		cur_ads = (cur_ads+1)%4;
 		if(cur_ads == 0){
