@@ -178,7 +178,7 @@ public class barrel_controller : MonoBehaviour {
         }
         else if (col.gameObject.tag == Common_data.BARREL_BLOCK_TAG)
         {
-            load_sound();
+
             do_barrel_block(col);
         }
         else if (col.gameObject.tag == Common_data.TRAP_TAG)
@@ -687,6 +687,7 @@ public class barrel_controller : MonoBehaviour {
 
         }
         else {
+			load_sound();
             move_direction = direction;
         }
 

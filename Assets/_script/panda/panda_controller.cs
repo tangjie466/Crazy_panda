@@ -81,15 +81,19 @@ public class panda_controller : MonoBehaviour {
 
     GameObject o;
 
-    AudioSource panda_audio;
+    AudioSource panda_audio,enu_audio;
 
-    enum SOUND_TYPE { normal,mental,standby,move,sitck,dead};
+    enum SOUND_TYPE { barell,mental,standby,move,sitck,dead};
    
     void Awake(){
 
         panda_audio = this.gameObject.AddComponent<AudioSource>();
         panda_audio.playOnAwake = false;
         panda_audio.loop = false;
+
+		enu_audio = this.gameObject.AddComponent<AudioSource>();
+		enu_audio.playOnAwake = false;
+		enu_audio.loop = false;
 
         //		player = GetComponentInParent<Animator>();
         last_trap_obj = null;
@@ -144,7 +148,7 @@ public class panda_controller : MonoBehaviour {
                 {
                     player.CrossFade("right_stand_", 0);
                 }
-                load_sound(SOUND_TYPE.normal);
+                
                 isTouch = false;
                 move_direction = 0;
                 return;
@@ -1092,33 +1096,46 @@ public class panda_controller : MonoBehaviour {
     }
 
     void load_sound(SOUND_TYPE sound_t) {
-		if (audio_controller.sound_isplaying != 1) {
+		if (audio_controller.sound_isplaying != 1 ) {
 			return;
 		}
         AudioClip clip = null;
         switch (sound_t) {
-            case SOUND_TYPE.normal:
-                clip = Resources.Load<AudioClip>("sound/panda_hit");
-                break;
+			case SOUND_TYPE.barell:
+				clip = Resources.Load<AudioClip>("sound/barrel");
+				enu_audio.clip = clip;
+				enu_audio.PlayOneShot(clip);
+			break;
+
+
             case SOUND_TYPE.mental:
                 clip = Resources.Load<AudioClip>("sound/hit_mental");
+				enu_audio.clip = clip;
+				enu_audio.PlayOneShot(clip);
                 break;
             case SOUND_TYPE.standby:
                 clip = Resources.Load<AudioClip>("sound/panda_standby");
+				panda_audio.clip = clip;
+				panda_audio.PlayOneShot(clip);
                 break;
             case SOUND_TYPE.move:
                 clip = Resources.Load<AudioClip>("sound/move");
+				enu_audio.clip = clip;
+				enu_audio.PlayOneShot(clip);
                 break;
             case SOUND_TYPE.sitck:
                 clip = Resources.Load<AudioClip>("sound/panda_stick");
+				enu_audio.clip = clip;
+				enu_audio.PlayOneShot(clip);
                 break;
             case SOUND_TYPE.dead:
                 clip = Resources.Load<AudioClip>("sound/panda_dead");
+				panda_audio.clip = clip;
+				panda_audio.PlayOneShot(clip);
                 break;
         }
 
-        panda_audio.clip = clip;
-        panda_audio.PlayOneShot(clip);
+        
     }
 
 

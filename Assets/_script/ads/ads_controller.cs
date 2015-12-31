@@ -39,7 +39,12 @@ public class ads_controller  {
 		return cont;
 	}
 
-	
+
+	public void Destroy_share(){
+		nor_admob.Destroy ();
+		reward_admob.Destroy ();
+
+	}
 	
 	public  ads_controller(){
 		#if UNITY_ANDROID
@@ -424,7 +429,7 @@ public class ads_controller  {
 	
 
 	public void quite_app(string s){
-
+		Destroy_share ();
 		mJo.Call("quiteApp",s);
 	}
 
