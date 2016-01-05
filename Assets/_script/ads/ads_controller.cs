@@ -31,6 +31,7 @@ public class ads_controller  {
 
 	[HideInInspector]
 	public int youmi_video_state = 0;
+
 	public static ads_controller share_ads(){
 		if(cont == null){
 			cont = new ads_controller();
@@ -45,7 +46,48 @@ public class ads_controller  {
 		reward_admob.Destroy ();
 
 	}
-	
+
+
+	public string getDeviceID(){
+		string devicdID = "";
+#if UNITY_ANDROID
+		devicdID = mJo.Call<string>("getDeviceID");
+#elif UNITY_IOS
+
+#endif
+		return devicdID;
+	}
+
+
+
+	public string getSD(){
+
+		string sd = "";
+#if UNITY_ANDROID
+		sd = mJo.Call<string>("getSD");
+#elif UNITY_IOS
+
+#endif
+		return sd;
+
+	}
+
+
+	public string getQD(){
+
+		string qd = "";
+#if UNITY_ANDROID
+		qd = mJo.Call<string>("getYouMengQuDao");
+#elif UNITY_IOS
+
+#endif
+		return qd;
+
+	}
+
+
+
+
 	public  ads_controller(){
 		#if UNITY_ANDROID
 		mJc=new AndroidJavaClass("com.unity3d.player.UnityPlayer");
@@ -58,9 +100,9 @@ public class ads_controller  {
 		string nor_adId = "ca-app-pub-6426348923391842/6822076817";
 		string reward_adId = "ca-app-pub-6426348923391842/2252276414";
 
-		if(deviceid == ""){
-			deviceid = mJo.Call<string>("getDeivceID");
-		}
+
+
+
 
 #elif UNITY_IOS
 		string adUnitId = "";

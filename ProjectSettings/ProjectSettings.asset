@@ -150,8 +150,8 @@ PlayerSettings:
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 2
   androidSplashScreen: {fileID: 2800000, guid: 86ffe2304b6e86347afb0788d7d6841f, type: 3}
-  AndroidKeystoreName: C:/Users/tj/Desktop/doublej.keystore
-  AndroidKeyaliasName: doublej
+  AndroidKeystoreName: 
+  AndroidKeyaliasName: 
   AndroidTVCompatibility: 0
   AndroidIsGame: 1
   androidEnableBanner: 1
