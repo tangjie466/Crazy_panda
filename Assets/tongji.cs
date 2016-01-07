@@ -54,7 +54,7 @@ public class tongji : MonoBehaviour {
 		int p = PlayerPrefs.GetInt("firstInstall",0);
 		if(p == 0){
 
-			string data = ";; pd="+pd+";;vc="+Application.version+";;qd="+ads_controller.share_ads().getQD()+";;dd="+ads_controller.share_ads().getDeviceID()
+			string data = ";;pd="+pd+";;vs="+Application.version+";;qd="+ads_controller.share_ads().getQD()+";;dd="+ads_controller.share_ads().getDeviceID()
 				+";;sd="+ads_controller.share_ads().getSD();
 			Debug.Log("http data is :"+data);
 			HttpUtil.shareInstance().httpPost(url1,data,1);
@@ -76,7 +76,7 @@ public class tongji : MonoBehaviour {
 		
 		if(curday != lastLogingDay){
 			
-			string data = ";; pd="+pd+";;vc="+Application.version+";;qd="+ads_controller.share_ads().getQD()+";;dd="+ads_controller.share_ads().getDeviceID()
+			string data = ";;pd="+pd+";;vs="+Application.version+";;qd="+ads_controller.share_ads().getQD()+";;dd="+ads_controller.share_ads().getDeviceID()
 				+";;sd="+ads_controller.share_ads().getSD();
 			Debug.Log("http data is :"+data);
 			HttpUtil.shareInstance().httpPost(url2,data,2);
