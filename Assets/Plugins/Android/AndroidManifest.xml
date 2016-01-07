@@ -41,6 +41,7 @@
    <activity
        android:name="com.doublej.youmi.ads.MainActivity"
        android:label="@string/app_name"
+       android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
        android:screenOrientation="landscape" >
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
@@ -54,7 +55,10 @@ android:value="true" />
 
 
 <!-- 配置unity3d的activity -->
-<activity android:name="com.unity3d.player.UnityPlayerActivity" >
+<activity android:name="com.unity3d.player.UnityPlayerActivity"
+    android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
+           android:screenOrientation="landscape"
+    >
 </activity>
 
 <!-- 允许unity3d将事件传到DalvikVM的转发机制 -->

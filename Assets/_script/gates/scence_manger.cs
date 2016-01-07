@@ -66,6 +66,7 @@ public class scence_manger : MonoBehaviour {
 
 	public void quiteApp(){
 		GA.EventEnd(tongji.GAME_BEGIN);
+		ads_controller.share_ads().Destroy_share();
 		Application.Quit();
 
 	}
